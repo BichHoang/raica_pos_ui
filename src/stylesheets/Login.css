@@ -1,0 +1,50 @@
+.Login {
+  text-align: center;
+}
+
+.Login-logo {
+  height: 8vmin;
+  pointer-events: none;
+  margin-bottom: 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Login-logo {
+    animation: Login-logo-spin infinite 20s linear;
+  }
+}
+
+.Login-link {
+  color: #61dafb;
+}
+
+@keyframes Login-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Login-content {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  padding: 4vh;
+}
+
+.Login-form {
+  padding: 24px;
+  width: 300px;
+  border: 1px solid #282c34;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.2);
+}
+
+.Login-button {
+  padding: 16px;
+}
