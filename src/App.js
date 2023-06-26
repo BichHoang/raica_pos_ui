@@ -29,9 +29,8 @@ function App() {
   }
 
   return (
-    <Layout>
+    <Layout handleLogout={handleLogout}>
       <Outlet />
-      <button onClick={handleLogout}>log out</button>
     </Layout>
   );
 }

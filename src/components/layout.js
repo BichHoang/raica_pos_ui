@@ -22,10 +22,10 @@ const drawerItems = [
   { name: 'Settings', icon: <InboxIcon />, path: '/settings' },
 ];
 
-function Layout({ children }) {
+function Layout({ children, handleLogout }) {
   return (
     <Box sx={{ display: 'flex' }}>
-      <TopBar />
+      <TopBar handleLogout={handleLogout} />
       <Drawer
         variant="permanent"
         sx={{

@@ -14,10 +14,6 @@
   margin-bottom: 20px;
 }
 
-.Login-content {
-  font-size: calc(10px + 2vmin);
-}
-
 .Login-form {
   display: flex;
   flex-direction: column;
@@ -25,6 +21,16 @@
 }
 
 .Login-button {
-  margin: 12px 0;
+  display: flex;
+  margin: 16px 0;
 }
 
+.Login-error {
+  padding: 11px 12px;
+  border: 1px solid #ff9800;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
