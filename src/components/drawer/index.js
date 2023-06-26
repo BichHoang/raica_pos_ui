@@ -1,10 +1,9 @@
 import * as React from 'react';
-import DrawerItem from './DrawerItem';
+import DrawerItem from './drawer-item';
 import MuiDrawer from '@mui/material/Drawer';
-import '../../stylesheets/Drawer.css';
+import '../../stylesheets/drawer.css';
 
 export default function Drawer({ isOpen = true, items = [] }) {
-  console.log("Drawer", items)
   return (
     <MuiDrawer open={isOpen} className="Drawer" variant="permanent">
       <div>Drawer</div>

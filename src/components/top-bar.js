@@ -4,7 +4,10 @@ import Typography from '@mui/material/Typography';
 
 function TopBar() {
   return (
-    <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+    <AppBar position="fixed" sx={{
+      backgroundColor: '#23ad4e',
+      zIndex: (theme) => theme.zIndex.drawer + 1,
+    }}>
       <Toolbar>
         <Typography variant="h6" noWrap component="div">
           Top Bar
