@@ -6,6 +6,8 @@ import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import logo from '../images/logo.jpg';
+import '../stylesheets/top-bar.css';
 
 function TopBar({ handleLogout }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -26,8 +28,9 @@ function TopBar({ handleLogout }) {
       zIndex: (theme) => theme.zIndex.drawer + 1,
     }}>
       <Toolbar>
+        <img src={logo} className="Topbar-logo" alt="logo" />
         <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-          Top Bar
+          Rai Ca POS
         </Typography>
         <div>
           <IconButton
