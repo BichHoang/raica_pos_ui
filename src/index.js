@@ -1,14 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './stylesheets/index.css';
-import App from './App';
-import Login from './Login';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import ErrorPage from "./components/error-page";
+import App from './app';
+import Dashboard from './components/dashboard';
+import Settings from './components/settings';
 import reportWebVitals from './reportWebVitals';
+
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import './stylesheets/index.css';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {true ? <Login /> : <App />}
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
