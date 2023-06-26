@@ -27,6 +27,7 @@ body {
   font-family: Roboto,Nunito Sans,-apple-system,Avenir,Helvetica Neue,Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
 }
 
 code {
