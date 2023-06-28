@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
 
-function Dashboard() {
+function DashboardPage() {
   return (
     <Typography paragraph>
       DASHBOARD
@@ -8,4 +8,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default DashboardPage;

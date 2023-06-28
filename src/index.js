@@ -6,8 +6,11 @@ import {
 } from "react-router-dom";
 import ErrorPage from "./components/error-page";
 import App from './app';
-import Dashboard from './components/dashboard';
-import Settings from './components/settings';
+import Home from './pages/home-page';
+import Dashboard from './pages/dashboard-page';
+import Orders from './pages/orders-page';
+import Inventory from './pages/inventory-page';
+import SetupStore from './pages/setup-store-page';
 import reportWebVitals from './reportWebVitals';
 
 import '@fontsource/roboto/300.css';
@@ -23,12 +26,24 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        path: "/",
+        element: <Home />,
+      },
+      {
         path: "dashboard",
         element: <Dashboard />,
       },
       {
+        path: "orders",
+        element: <Orders />,
+      },
+      {
+        path: "inventory",
+        element: <Inventory />,
+      },
+      {
         path: "settings",
-        element: <Settings />,
+        element: <SetupStore />,
       },
     ],
   },

@@ -118,7 +118,7 @@ function Login({ setToken }) {
                 type="submit"
                 sx={{
                   boxShadow: 'none',
-                  backgroundColor: 'rgb(35, 173, 78)',
+                  backgroundColor: '#23ad4e',
                   width: '100%',
                   padding: '12px 16px',
                   '&:hover': { backgroundColor: '#187936' },

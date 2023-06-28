@@ -7,19 +7,22 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import SettingsIcon from '@mui/icons-material/Settings';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import InventoryIcon from '@mui/icons-material/Inventory';
 import Icon from '@mui/material/Icon';
 import TopBar from './top-bar';
 
 const drawerWidth = 240;
 
 const drawerItems = [
-  { name: 'Dashboard', icon: <InboxIcon />, path: '/dashboard' },
-  { name: 'Second', icon: <InboxIcon /> },
-  { name: 'Third', icon: <InboxIcon /> },
-  { name: 'Fourth', icon: <InboxIcon /> },
-  { name: 'Settings', icon: <InboxIcon />, path: '/settings' },
+  { name: 'Trang Chủ', icon: <HomeIcon sx={{color: '#23ad4e'}} />, path: '/' },
+  { name: 'Báo Cáo', icon: <DashboardIcon sx={{color: '#23ad4e'}} />, path: '/dashboard' },
+  { name: 'Giao Dịch', icon: <AssignmentIcon sx={{color: '#23ad4e'}} />, path: '/orders' },
+  { name: 'Mặt Hàng', icon: <InventoryIcon sx={{color: '#23ad4e'}} />, path: '/inventory' },
+  { name: 'Thiết Lập', icon: <SettingsIcon sx={{color: '#23ad4e'}} />, path: '/settings' },
 ];
 
 function Layout({ children, handleLogout }) {
