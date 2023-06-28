@@ -1,12 +1,5 @@
 import * as React from 'react';
-import {
-  DataGrid,
-  gridPageCountSelector,
-  GridPagination,
-  useGridApiContext,
-  useGridSelector,
-} from '@mui/x-data-grid';
-import MuiPagination from '@mui/material/Pagination';
+import Table from '../components/table';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
@@ -43,34 +36,6 @@ function handleCreate() {
   return false;
 }
 
-function Pagination({ page, onPageChange, className }) {
-  const apiRef = useGridApiContext();
-  const pageCount = useGridSelector(apiRef, gridPageCountSelector);
-
-  return (
-    <MuiPagination
-      color="primary"
-      className={className}
-      sx={{
-        '& .MuiPaginationItem-root': {
-          '&.Mui-selected': {
-            background: '#23ad4e',
-          },
-        },
-      }}
-      count={pageCount}
-      page={page + 1}
-      onChange={(event, newPage) => {
-        onPageChange(event, newPage - 1);
-      }}
-    />
-  );
-}
-
-function CustomPagination(props) {
-  return <GridPagination ActionsComponent={Pagination} {...props} />;
-}
-
 export default function Inventory() {
   return (
     <>
@@ -91,23 +56,7 @@ export default function Inventory() {
           Tạo Mặt Hàng
         </Button>
       </div>
-      <div style={{ height: 400, width: '100%' }}>
-        <DataGrid
-          pagination
-          slots={{
-            pagination: CustomPagination,
-          }}
-          {...data}
-          initialState={{
-            // ...data.initialState,
-            pagination: {
-              paginationModel: { page: 0, pageSize: 5 },
-            },
-          }}
-          pageSizeOptions={[5, 10]}
-          checkboxSelection
-        />
-      </div>
+      <Table data={data} />
     </>
   );
 }
