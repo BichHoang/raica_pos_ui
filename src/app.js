@@ -20,7 +20,7 @@ function App() {
 
   const handleLogout = async e => {
     e.preventDefault();
-    const data = await logoutUser(token);
+    await logoutUser(token);
     clearToken();
   }
 

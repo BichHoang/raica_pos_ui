@@ -65,7 +65,7 @@ function Login({ setToken }) {
   return (
     <div className="Login">
       <section className="Login-content">
-        <Paper elevation={2} sx={{ padding: '32px 40px',  }}>
+        <Paper elevation={0} sx={{ padding: '32px 40px',  }}>
           <img src={logo} className="Login-logo" alt="logo" />
           <Box
             component="form"

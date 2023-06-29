@@ -21,7 +21,7 @@ const data = {
   columns,
 };
 
-function handleCreate() {
+function handleDownload() {
   return false;
 }
 
@@ -33,7 +33,7 @@ export default function Orders() {
       </Typography>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Button
-          onClick={handleCreate}
+          onClick={handleDownload}
           variant="contained"
           sx={{
             boxShadow: 'none',
@@ -42,7 +42,7 @@ export default function Orders() {
             '&:hover': { backgroundColor: '#187936' },
           }}
         >
-          Tạo Mặt Hàng
+          Tải Báo Cáo
         </Button>
       </div>
       <Table data={data} />

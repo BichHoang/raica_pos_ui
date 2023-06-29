@@ -6,10 +6,11 @@ import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../images/logo.jpg';
 import '../stylesheets/top-bar.css';
 
-function TopBar({ handleLogout }) {
+function TopBar({ handleDrawerToggle, handleLogout }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
@@ -28,6 +29,15 @@ function TopBar({ handleLogout }) {
       zIndex: (theme) => theme.zIndex.drawer + 1,
     }}>
       <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          sx={{ mr: 2, display: { sm: 'none' } }}
+        >
+          <MenuIcon />
+        </IconButton>
         <img src={logo} className="Topbar-logo" alt="logo" />
         <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
           Rai Ca POS
