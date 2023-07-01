@@ -1,0 +1,9 @@
+.MenuPages-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  flex: 1;
+  border-right: 1px solid #e9f6ed;
+  text-transform: uppercase;
+}

@@ -9,16 +9,17 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import TopBar from './top-bar';
-
-const drawerWidth = 240;
+import { drawerWidth } from './constants';
 
 const drawerItems = [
   { name: 'Trang Chủ', icon: <HomeIcon sx={{color: '#23ad4e'}} />, path: '/' },
+  { name: 'POS', icon: <StorefrontIcon sx={{color: '#23ad4e'}} />, path: '/pos' },
   { name: 'Báo Cáo', icon: <DashboardIcon sx={{color: '#23ad4e'}} />, path: '/dashboard' },
   { name: 'Giao Dịch', icon: <AssignmentIcon sx={{color: '#23ad4e'}} />, path: '/orders' },
   { name: 'Mặt Hàng', icon: <InventoryIcon sx={{color: '#23ad4e'}} />, path: '/inventory' },
@@ -95,7 +96,7 @@ function Layout({ children, handleLogout, window }) {
           {drawer}
         </Drawer>
       </Box>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1 }}>
         <Toolbar />
         {children}
       </Box>

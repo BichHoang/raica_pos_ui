@@ -38,7 +38,7 @@ function handleCreate() {
 
 export default function Inventory() {
   return (
-    <>
+    <div style={{ padding: '24px' }}>
       <Typography variant="h5">
         Tất cả mặt hàng
       </Typography>
@@ -57,6 +57,6 @@ export default function Inventory() {
         </Button>
       </div>
       <Table data={data} />
-    </>
+    </div>
   );
 }

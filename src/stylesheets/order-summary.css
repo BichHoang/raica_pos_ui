@@ -1,0 +1,13 @@
+.OrderSummary-item {
+  display: flex;
+  padding: 12px 2px;
+  margin: 0 10px;
+  justify-content: space-between;
+}
+
+.OrderSummary-item-name {
+}
+
+.OrderSummary-item-price {
+  font-weight: 700;
+}

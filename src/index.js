@@ -7,6 +7,7 @@ import {
 import ErrorPage from "./components/error-page";
 import App from './app';
 import Home from './pages/home-page';
+import POS from './pages/pos-page';
 import Dashboard from './pages/dashboard-page';
 import Orders from './pages/orders-page';
 import Inventory from './pages/inventory-page';
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "pos",
+        element: <POS />,
       },
       {
         path: "dashboard",

@@ -27,7 +27,7 @@ function handleDownload() {
 
 export default function Orders() {
   return (
-    <>
+    <div style={{ padding: '24px' }}>
       <Typography variant="h5">
         Tất cả giao dịch
       </Typography>
@@ -46,6 +46,6 @@ export default function Orders() {
         </Button>
       </div>
       <Table data={data} />
-    </>
+    </div>
   );
 }

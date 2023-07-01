@@ -1,11 +1,11 @@
 import Typography from '@mui/material/Typography';
 
-function DashboardPage() {
+function HomePage() {
   return (
     <Typography paragraph>
-      DASHBOARD
+      HOME
     </Typography>
   );
 }
 
-export default DashboardPage;
+export default HomePage;

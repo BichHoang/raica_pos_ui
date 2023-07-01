@@ -1,0 +1,10 @@
+.SelectableItems-item {
+  height: 90px;
+  width: 100px;
+  margin: 4px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
