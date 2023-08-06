@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Table from '../components/table';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -36,11 +37,35 @@ function handleCreate() {
   return false;
 }
 
-export default function Inventory() {
+export default function Categories() {
+  const [items, setItems] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
+  async function fetchItems() {
+    await axios.get(
+      `${process.env.REACT_APP_API_HOST}/api/categories`,
+      {
+        headers: {
+         'Content-Type': 'application/json',
+         'Accept': 'application/json',
+        },
+      })
+      .then(resp => {
+        if (resp.status === 200) {
+          setItems(resp.data);
+        }
+      })
+      .catch(err => setError("Sorry, something went wrong."))
+  }
+
   return (
     <div style={{ padding: '24px' }}>
       <Typography variant="h5">
-        Tất cả mặt hàng
+        Tất cả danh mục
       </Typography>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Button
@@ -53,7 +78,7 @@ export default function Inventory() {
             '&:hover': { backgroundColor: '#187936' },
           }}
         >
-          Tạo Mặt Hàng
+          Tạo Danh Mục
         </Button>
       </div>
       <Table data={data} />

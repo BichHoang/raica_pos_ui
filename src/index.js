@@ -10,8 +10,10 @@ import Home from './pages/home-page';
 import POS from './pages/pos-page';
 import Dashboard from './pages/dashboard-page';
 import Orders from './pages/orders-page';
-import Inventory from './pages/inventory-page';
+import Categories from './pages/categories-page';
+import MenuItems from './pages/menu-items-page';
 import SetupStore from './pages/setup-store-page';
+import Timekeeping from './pages/timekeeping-page';
 import reportWebVitals from './reportWebVitals';
 
 import '@fontsource/roboto/300.css';
@@ -43,12 +45,20 @@ const router = createBrowserRouter([
         element: <Orders />,
       },
       {
-        path: "inventory",
-        element: <Inventory />,
+        path: "menu-items",
+        element: <MenuItems />,
+      },
+      {
+        path: "categories",
+        element: <Categories />,
       },
       {
         path: "settings",
         element: <SetupStore />,
+      },
+      {
+        path: "timekeeping",
+        element: <Timekeeping />,
       },
     ],
   },
