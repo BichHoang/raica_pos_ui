@@ -1,7 +1,17 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from '../components/table';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import gapi from 'gapi-client';
+
+console.log('gapi:', gapi, process.env.REACT_APP_API_HOST, process.env.REACT_APP_GOOGLE_API_KEY, process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID)
+
+// Discovery doc URL for APIs used by the quickstart
+const DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+const SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -57,6 +67,45 @@ function handleCreate() {
 }
 
 function TimekeepingPage() {
+  const [gapiLoaded, setGapiLoaded] = useState(false);
+
+  useEffect(() => {
+    // 1. Load the JavaScript client library.
+    if (!gapiLoaded) {
+      console.log('useEffect')
+      gapi.load('client', startGapi);
+    }
+  }, [gapiLoaded, startGapi]);
+
+  async function startGapi() {
+    console.log('startGapi')
+    // 2. Initialize the JavaScript client library.
+    await gapi.client.init({
+      'apiKey': process.env.REACT_APP_GOOGLE_API_KEY,
+      // Your API key will be automatically added to the Discovery Document URLs.
+      'discoveryDocs': [DISCOVERY_DOC],
+      // clientId and scope are optional if auth is not required.
+      'clientId': process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID,
+      'scope': SCOPES,
+    }).then(function() {
+      console.log('line 20')
+      // 3. Initialize and make the API request.
+      // return gapi.client.people.people.get({
+      //   'resourceName': 'people/me',
+      //   'requestMask.includeField': 'person.names'
+      // });
+    }).then(function(response) {
+      console.log('line 27')
+      console.log(response.result);
+    }, function(reason) {
+      console.log('line 30')
+      console.log('Error: ' + reason.result.error.message);
+    });
+    setGapiLoaded(true);
+  };
+
+  console.log('gapiLoaded?', gapiLoaded)
+
   return (
     <div style={{ padding: '24px' }}>
       <Typography variant="h5">
