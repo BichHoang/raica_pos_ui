@@ -72,7 +72,7 @@ function Login({ setToken }) {
             className="Login-form"
             sx={{
               display: 'flex',
-              'flex-direction': 'column',
+              flexDirection: 'column',
             }}
             noValidate
             autoComplete="off"
